@@ -2,8 +2,8 @@
 import { useRef, useState } from "react";
 
 const SoundCheck = () => {
-  const buttonSoundRef = useRef<HTMLAudioElement | null>(null);
-  const otherButtonSoundRef = useRef<HTMLAudioElement | null>(null);
+  const buttonSoundRef = useRef<HTMLAudioElement | null>(null); // sound1
+  const otherButtonSoundRef = useRef<HTMLAudioElement | null>(null); // sound2
   const [activeRow, setActiveRow] = useState<number | null>(null);
 
   const playButtonSound = (index: number) => {
@@ -46,35 +46,23 @@ const SoundCheck = () => {
         <table className="w-full border-2 border-gray-400 dark:border-gray-600 table-fixed">
           <thead>
             <tr className="bg-gray-100 dark:bg-gray-800">
-              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5 text-black dark:text-white">
-                क्रमांक
-              </th>
-              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5 text-black dark:text-white">
-                नाव
-              </th>
-              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5 text-black dark:text-white">
-                फोटो
-              </th>
-              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5 text-black dark:text-white">
-                निशाणी
-              </th>
-              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5 text-black dark:text-white">
-                बत्ती
-              </th>
-              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5 text-black dark:text-white">
-                बटन
-              </th>
+              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">क्रमांक</th>
+              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">नाव</th>
+              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">फोटो</th>
+              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">निशाणी</th>
+              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">बत्ती</th>
+              <th className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">बटन</th>
             </tr>
           </thead>
 
           <tbody>
             {[...Array(9)].map((_, index) => (
               <tr key={index} className="bg-white dark:bg-gray-800">
-                <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center font-bold text-sm max-sm:text-xs text-black dark:text-white">
+                <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center font-bold text-sm max-sm:text-xs">
                   {index + 1}
                 </td>
 
-                <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center font-bold text-sm max-sm:text-xs text-black dark:text-white">
+                <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center font-bold text-sm max-sm:text-xs">
                   {index === 4 ? "अर्जुन सिंह गौड" : index === 8 ? "नोटा" : ""}
                 </td>
 
@@ -100,6 +88,7 @@ const SoundCheck = () => {
                   )}
                 </td>
 
+                {/* Light */}
                 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center">
                   <div
                     className={`w-5 h-5 rounded-full mx-auto max-sm:w-4 max-sm:h-4 ${
@@ -110,12 +99,13 @@ const SoundCheck = () => {
                   ></div>
                 </td>
 
+                {/* Button */}
                 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center">
                   <button
                     onClick={() =>
-                      index === 4 || index === 8
-                        ? playButtonSound(index)
-                        : playOtherButtonSound(index)
+                      index === 4
+                        ? playButtonSound(index) // फक्त उमेदवारासाठी sound1
+                        : playOtherButtonSound(index) // NOTA + बाकी सर्व rows → sound2
                     }
                     className={`h-7 rounded-full max-sm:h-6 ${
                       index === 4
@@ -130,20 +120,6 @@ const SoundCheck = () => {
         </table>
       </div>
 
-      <h1 className="text-center text-xl font-bold mb-4 mt-6">
-        <span className="text-red-500">कमळ</span> या निशाणी समोरील बटन दाबून{" "}
-        <span className="text-red-500">अर्जुन सिंह गौड</span> यांना प्रचंड
-        बहुमतांनी विजय करा.
-      </h1>
-
-      <div className="text-center mb-4 pt-2">
-        <span className="bg-yellow-200 dark:bg-yellow-300 text-green-800 font-bold px-4 py-2 inline-block rounded">
-          मतदान - मंगळवार दि. २ डिसेंबर २०२५ रोजी सकाळी ७ ते सायं ६ वाजे
-          पर्यंत.
-        </span>
-      </div>
-
-      {/* Audio */}
       <audio ref={buttonSoundRef} src="/sound1.mp3" />
       <audio ref={otherButtonSoundRef} src="/sound2.mp3" />
     </section>
