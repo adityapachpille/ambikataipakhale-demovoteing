@@ -64,11 +64,11 @@ return (
 </td>
 
 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center font-bold text-sm max-sm:text-xs">
-{index === 4 ? "सौ. अंबिका लक्ष्मण पखाले" : index === 8 ? "नोटा" : ""}
+{index === 3 ? "सौ. अंबिका लक्ष्मण पखाले" : index === 8 ? "नोटा" : ""}
 </td>
 
 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center">
-{index === 4 ? (
+{index === 3 ? (
 <img
 src="/user.png"
 className="w-10 h-10 mx-auto object-cover max-sm:w-8 max-sm:h-8"
@@ -79,7 +79,7 @@ className="w-10 h-10 mx-auto object-cover max-sm:w-8 max-sm:h-8"
 </td>
 
 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center">
-{index === 4 ? (
+{index === 3 ? (
 <img
 src="/symbol-bartan.png"
 className="w-10 h-10 mx-auto object-contain max-sm:w-8 max-sm:h-8"
@@ -104,12 +104,12 @@ activeRow === index
 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center">
 <button
 onClick={() =>
-index === 4
+index === 3
 ? playButtonSound(index) // फक्त उमेदवारासाठी sound1
 : playOtherButtonSound(index) // NOTA + बाकी सर्व rows → sound2
 }
 className={`h-7 rounded-full max-sm:h-6 ${
-index === 4
+index === 3
 ? "bg-green-500 w-14 max-sm:w-12"
 : "bg-blue-700 w-14 max-sm:w-12"
 }`}
