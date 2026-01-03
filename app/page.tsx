@@ -71,7 +71,7 @@ return (
 {index === 3 ? (
 <img
 src="/user.png"
-className="w-15 h-15 mx-auto object-cover max-sm:w-12 max-sm:h-12"
+className="w-12 h-12 mx-auto object-cover max-sm:w-12 max-sm:h-12"
 />
 ) : (
 <div className="w-10 h-10 mx-auto max-sm:w-8 max-sm:h-8" />
