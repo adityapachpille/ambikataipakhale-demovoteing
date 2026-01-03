@@ -7,7 +7,7 @@ export default function Footer() {
 
         {/* Left Text */}
         <p className="font-semibold">
-          Powered By Ishwari Graphics Mangrulpir.
+          Powered By Vision Frame Media.
         </p>
 
         {/* Right Text / Link */}
