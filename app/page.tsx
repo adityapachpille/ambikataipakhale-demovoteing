@@ -64,11 +64,11 @@ return (
 </td>
 
 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center font-bold text-sm max-sm:text-xs">
-{index === 3 ? "सौ. अंबिका लक्ष्मण पखाले" : index === 8 ? "नोटा" : ""}
+{index === 1 ? "सौ. अंबिका लक्ष्मण पखाले" : index === 8 ? "नोटा" : ""}
 </td>
 
 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center">
-{index === 3 ? (
+{index === 1 ? (
 <img
 src="/user.png"
 className="w-12 h-12 mx-auto object-cover max-sm:w-12 max-sm:h-12"
@@ -109,7 +109,7 @@ index === 3
 : playOtherButtonSound(index) // NOTA + बाकी सर्व rows → sound2
 }
 className={`h-7 rounded-full max-sm:h-6 ${
-index === 3
+index === 1
 ? "bg-green-500 w-14 max-sm:w-12"
 : "bg-blue-700 w-14 max-sm:w-12"
 }`}
