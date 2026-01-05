@@ -79,7 +79,7 @@ className="w-12 h-12 mx-auto object-cover max-sm:w-12 max-sm:h-12"
 </td>
 
 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center">
-{index === 3 ? (
+{index === 1 ? (
 <img
 src="/symbol-bartan.png"
 className="w-10 h-10 mx-auto object-contain max-sm:w-8 max-sm:h-8"
@@ -104,7 +104,7 @@ activeRow === index
 <td className="border-2 border-gray-400 dark:border-gray-600 px-1 py-1 text-center">
 <button
 onClick={() =>
-index === 3
+index === 1
 ? playButtonSound(index) // फक्त उमेदवारासाठी sound1
 : playOtherButtonSound(index) // NOTA + बाकी सर्व rows → sound2
 }
